@@ -1,0 +1,35 @@
+* {
+    font: url(:/font/font/meiryo.ttc);
+}
+
+Qlabel#titleLabel {
+    font-weight: lighter;
+    font:
+}
+
+ QCheckBox::indicator {
+     width: 25px;
+     height: 25px;
+ }
+
+QCheckBox#serialCheckBox::indicator:checked {
+    image: url(:/image/image/check.png);
+}
+QCheckBox#serialCheckBox::indicator:unchecked {
+    image: rgba(0, 0, 0, 0);
+}
+
+QProgressBar#decorativeProgressBar {
+    border: 2px solid grey;
+    border-radius: 5px;
+    text-align: right;
+}
+
+QProgressBar#decorativeProgressBar::chunk {
+    width: 20px;
+    margin: 0.5px;
+}
+
+QWidget#centralWidget {
+    margin: 0px;
+}

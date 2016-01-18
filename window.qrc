@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/check.png</file>
+    </qresource>
+    <qresource prefix="/css">
+        <file>stylesheet/mainwindow.css</file>
+    </qresource>
+    <qresource prefix="/font">
+        <file>font/migmix-1m-regular.ttf</file>
+    </qresource>
+</RCC>

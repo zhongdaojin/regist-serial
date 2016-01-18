@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/font">
+        <file>font/meiryo.ttc</file>
+    </qresource>
+</RCC>
