@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
     int id = QFontDatabase::addApplicationFont( ":/font/font/meiryo.ttc" );
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     a.setFont(family);
-    qDebug() << QApplication::libraryPaths();
 
     MainWindow w;
     w.show();

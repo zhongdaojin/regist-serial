@@ -43,16 +43,17 @@ void MainWindow::onReleasePushButtonClicked()
 {
     ui->releasePushButton->setEnabled( false );
     QString serial = ui->serialLineEdit->text().replace("-", "");
-    qDebug() << serial;
+
     QMessageBox msgBox(ui->centralWidget);
     msgBox.setWindowTitle( tr("シリアル番号の入力"));
 
     DbConnect db;
-    QHash<QString, QString> params, params2;
-    params.insert(":SERIAL", serial);
-    params2.insert(":SERIAL", serial);
-    params.insert(":ON", STORES_ON );
-    params.insert(":OFF", STORES_OFF );
+    QHash<QString, QString> selectParams, updateParams;
+    selectParams.insert(":SERIAL", serial);
+    updateParams.insert(":SERIAL", serial);
+    selectParams.insert(":SERIAL", serial);
+    selectParams.insert(":ON", STORES_ON );
+    selectParams.insert(":OFF", STORES_OFF );
     {
         QString sql;
         sql =  " UPDATE stores ";
@@ -60,7 +61,7 @@ void MainWindow::onReleasePushButtonClicked()
         sql += "   on_off = :ON";
         sql += " WHERE serial = :SERIAL ";
         sql += "   AND on_off = :OFF ";
-        db.queryPrepareExecute(sql, params);
+        db.queryPrepareExecute(sql, selectParams);
     }
     {
          QString sql;
@@ -69,8 +70,8 @@ void MainWindow::onReleasePushButtonClicked()
          sql += "       ,A.on_off ";
          sql += "   FROM stores A ";
          sql += "   WHERE A.serial = :SERIAL ";
-         QSqlQuery *query = db.queryPrepareExecute(sql, params2);
-         qDebug() << query->size();
+         QSqlQuery *query = db.queryPrepareExecute(sql, updateParams);
+
          while ( query->next()) {
             QString name = query->value(0).toString();
             QString on_off = query->value(1).toString();
@@ -83,7 +84,6 @@ void MainWindow::onReleasePushButtonClicked()
             }
          }
          if ( 0 == query->size() ) {
-             qDebug() << query->size();
              msgBox.setStandardButtons(QMessageBox::Yes);
              msgBox.setText( tr("制限が解除できませんでした。\nシリアル番号をご確認ください。") );
              ui->decorativeProgressBar->setMaximum( 50 );
@@ -100,7 +100,6 @@ void MainWindow::onReleasePushButtonClicked()
     }
 
     msgBox.exec();
-    qDebug() << msgBox.text();
 }
 
 void MainWindow::onSerialChanged()
