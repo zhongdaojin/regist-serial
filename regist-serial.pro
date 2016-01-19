@@ -31,3 +31,4 @@ RESOURCES += \
     meiryo.qrc
 
 DISTFILES +=
+
