@@ -21,7 +21,10 @@ HEADERS  += mainwindow.h \
     dbconnect.h \
     dbinfo.h
 
-FORMS    += mainwindow.ui
+win32 {
+    FORMS    += \
+        main-win.ui
+}
 
 RESOURCES += \
     window.qrc \
