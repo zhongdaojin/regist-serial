@@ -21,7 +21,10 @@ HEADERS  += mainwindow.h \
     dbconnect.h \
     dbinfo.h
 
-FORMS    += mainwindow.ui
+macx {
+    FORMS    += \
+        main-macx.ui
+}
 
 RESOURCES += \
     window.qrc \
