@@ -324,7 +324,7 @@
           <set>Qt::ImhNone</set>
          </property>
          <property name="inputMask">
-          <string>NNNNN-NNNNN-NNNNN-NNNNN-NNNNN</string>
+          <string>NNNNN-NNNNN-NNNNN-NNNNN-NNNNN; </string>
          </property>
          <property name="text">
           <string>----</string>
@@ -336,7 +336,7 @@
           <bool>true</bool>
          </property>
          <property name="cursorPosition">
-          <number>0</number>
+          <number>29</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -350,8 +350,8 @@
          <property name="cursorMoveStyle">
           <enum>Qt::LogicalMoveStyle</enum>
          </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
+         <property name="clearButtonEnabled" stdset="0">
+          <bool>false</bool>
          </property>
         </widget>
        </item>

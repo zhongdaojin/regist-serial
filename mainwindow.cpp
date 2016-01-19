@@ -43,12 +43,14 @@ void MainWindow::onReleasePushButtonClicked()
 {
     ui->releasePushButton->setEnabled( false );
     QString serial = ui->serialLineEdit->text().replace("-", "");
+    qDebug() << serial;
     QMessageBox msgBox(ui->centralWidget);
     msgBox.setWindowTitle( tr("シリアル番号の入力"));
 
     DbConnect db;
-    QHash<QString, QString> params;
+    QHash<QString, QString> params, params2;
     params.insert(":SERIAL", serial);
+    params2.insert(":SERIAL", serial);
     params.insert(":ON", STORES_ON );
     params.insert(":OFF", STORES_OFF );
     {
@@ -58,7 +60,7 @@ void MainWindow::onReleasePushButtonClicked()
         sql += "   on_off = :ON";
         sql += " WHERE serial = :SERIAL ";
         sql += "   AND on_off = :OFF ";
-        QSqlQuery *query = db.queryPrepareExecute(sql, params);
+        db.queryPrepareExecute(sql, params);
     }
     {
          QString sql;
@@ -67,7 +69,8 @@ void MainWindow::onReleasePushButtonClicked()
          sql += "       ,A.on_off ";
          sql += "   FROM stores A ";
          sql += "   WHERE A.serial = :SERIAL ";
-         QSqlQuery *query = db.queryPrepareExecute(sql, params);
+         QSqlQuery *query = db.queryPrepareExecute(sql, params2);
+         qDebug() << query->size();
          while ( query->next()) {
             QString name = query->value(0).toString();
             QString on_off = query->value(1).toString();
@@ -75,13 +78,14 @@ void MainWindow::onReleasePushButtonClicked()
 
             if ( on_off == STORES_ON ) {
                 msgBox.setStandardButtons(QMessageBox::Ok);
-                msgBox.setText( "制限は解除されました。" );
+                msgBox.setText( tr("制限は解除されました。") );
                 ui->decorativeProgressBar->setMaximum( 100 );
             }
          }
          if ( 0 == query->size() ) {
+             qDebug() << query->size();
              msgBox.setStandardButtons(QMessageBox::Yes);
-             msgBox.setText( "制限が解除できませんでした。\nシリアル番号をご確認ください。" );
+             msgBox.setText( tr("制限が解除できませんでした。\nシリアル番号をご確認ください。") );
              ui->decorativeProgressBar->setMaximum( 50 );
          }
     }
@@ -90,11 +94,13 @@ void MainWindow::onReleasePushButtonClicked()
     QEventLoop loop;
     for (int i = 0; i <= 100; i++ ) {
 
-        QTimer::singleShot( 50, &loop, SLOT( quit() ) );
+        QTimer::singleShot( 1, &loop, SLOT( quit() ) );
         loop.exec();
         ui->decorativeProgressBar->setValue(i);
     }
+
     msgBox.exec();
+    qDebug() << msgBox.text();
 }
 
 void MainWindow::onSerialChanged()

@@ -2,11 +2,14 @@
 #include <QApplication>
 #include <QFontDatabase>
 #include <QFile>
+#include <QTextCodec>
 #include <QDebug>
 #define QT_DEBUG_COMPONENT
 
 int main(int argc, char *argv[])
 {
+    QTextCodec::setCodecForTr( QTextCodec::codecForName("utf8") );
+
     QApplication a(argc, argv);
 
     QFile file( ":/css/stylesheet/mainwindow.css" );
@@ -17,7 +20,7 @@ int main(int argc, char *argv[])
     int id = QFontDatabase::addApplicationFont( ":/font/font/meiryo.ttc" );
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     a.setFont(family);
-
+    qDebug() << QApplication::libraryPaths();
 
     MainWindow w;
     w.show();
