@@ -22,8 +22,9 @@ HEADERS  += mainwindow.h \
     dbinfo.h
 
 macx {
-    FORMS    += \
-        main-macx.ui
+    FORMS   += main-macx.ui
+} win32 {
+    FORMS   += main-win.ui
 }
 
 RESOURCES += \
