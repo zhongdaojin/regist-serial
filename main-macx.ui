@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>406</width>
-    <height>440</height>
+    <height>513</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -60,8 +60,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>384</width>
-      <height>421</height>
+      <width>386</width>
+      <height>491</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="mainGridLayout">
@@ -83,7 +83,7 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>10</width>
+           <width>18</width>
            <height>20</height>
           </size>
          </property>
@@ -99,7 +99,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>350</width>
+           <width>340</width>
            <height>0</height>
           </size>
          </property>
@@ -136,7 +136,7 @@
        <property name="font">
         <font>
          <family>Helvetica</family>
-         <pointsize>11</pointsize>
+         <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
@@ -281,26 +281,27 @@
           <bool>true</bool>
          </property>
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>320</width>
+           <width>290</width>
            <height>30</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>320</width>
+           <width>290</width>
            <height>30</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <family>MigMix 1M</family>
+           <family>Helvetica</family>
+           <pointsize>14</pointsize>
           </font>
          </property>
          <property name="mouseTracking">
@@ -334,10 +335,10 @@
           <number>29</number>
          </property>
          <property name="frame">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="cursorPosition">
-          <number>29</number>
+          <number>0</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
