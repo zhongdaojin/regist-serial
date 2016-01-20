@@ -135,7 +135,8 @@
        </property>
        <property name="font">
         <font>
-         <family>MigMix 1M</family>
+         <family>Helvetica</family>
+         <pointsize>11</pointsize>
         </font>
        </property>
        <property name="text">
@@ -336,7 +337,7 @@
           <bool>true</bool>
          </property>
          <property name="cursorPosition">
-          <number>0</number>
+          <number>29</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -392,8 +393,10 @@
        </property>
        <property name="font">
         <font>
-         <family>MigMix 1M</family>
-         <pointsize>9</pointsize>
+         <family>Lucida Grande</family>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -414,7 +417,9 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="frameShape">
@@ -441,7 +446,9 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>9</pointsize>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">

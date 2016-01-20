@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "ui_main-macx.h"
 #include "dbconnect.h"
 #include <QDebug>
 #include <QCloseEvent>
