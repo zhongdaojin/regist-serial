@@ -1,5 +1,9 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+#ifdef Q_OS_WIN32
+    #include "ui_main-win.h"
+#elif Q_OS_MAC
+    #include "ui_main-mac.h"
+#endif
 #include "dbconnect.h"
 #include <QDebug>
 #include <QCloseEvent>
@@ -90,11 +94,12 @@ void MainWindow::onReleasePushButtonClicked()
          }
     }
     ui->decorativeProgressBar->setVisible( true );
+
     /* 飾りプログレスバー */
     QEventLoop loop;
     for (int i = 0; i <= 100; i++ ) {
 
-        QTimer::singleShot( 1, &loop, SLOT( quit() ) );
+        QTimer::singleShot( 50, &loop, SLOT( quit() ) );
         loop.exec();
         ui->decorativeProgressBar->setValue(i);
     }

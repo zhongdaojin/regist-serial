@@ -2,13 +2,19 @@
 #include <QApplication>
 #include <QFontDatabase>
 #include <QFile>
+#if QT_VERSION >= 0x050000
+#else
 #include <QTextCodec>
+#endif
 #include <QDebug>
 #define QT_DEBUG_COMPONENT
 
 int main(int argc, char *argv[])
 {
+#if QT_VERSION >= 0x050000
+#else
     QTextCodec::setCodecForTr( QTextCodec::codecForName("utf8") );
+#endif
 
     QApplication a(argc, argv);
 
