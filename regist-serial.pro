@@ -21,9 +21,10 @@ HEADERS  += mainwindow.h \
     dbconnect.h \
     dbinfo.h
 
-win32 {
-    FORMS    += \
-        main-win.ui
+macx {
+    FORMS   += main-macx.ui
+} win32 {
+    FORMS   += main-win.ui
 }
 
 RESOURCES += \
