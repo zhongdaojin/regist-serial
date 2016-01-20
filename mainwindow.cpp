@@ -56,7 +56,6 @@ void MainWindow::onReleasePushButtonClicked()
     QHash<QString, QString> selectParams, updateParams;
     selectParams.insert(":SERIAL", serial);
     updateParams.insert(":SERIAL", serial);
-    selectParams.insert(":SERIAL", serial);
     selectParams.insert(":ON", STORES_ON );
     selectParams.insert(":OFF", STORES_OFF );
     {
