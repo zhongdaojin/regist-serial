@@ -1,8 +1,9 @@
 #include "mainwindow.h"
 #ifdef Q_OS_WIN32
     #include "ui_main-win.h"
-#elif Q_OS_MAC
-    #include "ui_main-mac.h"
+#endif
+#ifdef Q_OS_MAC
+    #include "ui_main-macx.h"
 #endif
 #include "dbconnect.h"
 #include <QDebug>
