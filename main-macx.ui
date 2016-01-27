@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>406</width>
-    <height>513</height>
+    <width>405</width>
+    <height>551</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -60,8 +60,8 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>386</width>
-      <height>491</height>
+      <width>384</width>
+      <height>531</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="mainGridLayout">
@@ -136,7 +136,9 @@
        <property name="font">
         <font>
          <family>Helvetica</family>
-         <pointsize>12</pointsize>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -338,7 +340,7 @@
           <bool>false</bool>
          </property>
          <property name="cursorPosition">
-          <number>0</number>
+          <number>29</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -413,11 +415,12 @@
        <property name="maximumSize">
         <size>
          <width>400</width>
-         <height>60</height>
+         <height>70</height>
         </size>
        </property>
        <property name="font">
         <font>
+         <family>Helvetica</family>
          <pointsize>11</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -430,7 +433,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>インストールが完了したら、ご契約時にお渡ししたURLへアクセスし、&lt;br&gt;ログインIDとログインパスワードを入力してご利用ください。&lt;br&gt;</string>
+        <string>インストールが完了したら、&lt;br&gt;ご契約時にお渡ししたURLへアクセスし、&lt;br&gt;ログインIDとログインパスワードを入力してご利用ください。&lt;br&gt;</string>
        </property>
        <property name="textFormat">
         <enum>Qt::RichText</enum>
