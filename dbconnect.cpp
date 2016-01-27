@@ -1,7 +1,8 @@
 #include "dbinfo.h"
 #include "dbconnect.h"
 
-DbConnect::DbConnect(QString name)
+DbConnect::DbConnect(QString name) :
+    isConnect(false)
 {
     db = QSqlDatabase::addDatabase( DB_DRIVAR_NAME, name );
     db.setHostName( DB_HOST_NAME );
@@ -11,8 +12,8 @@ DbConnect::DbConnect(QString name)
     db.setPassword( DB_PASSWORD );
     db.setConnectOptions( DB_CONNECT_OPTION );
 
-    bool ok = db.open();
-    qDebug() << ok << db.lastError() << db.connectionName();
+    isConnect = db.open();
+//    qDebug() << isConnect << db.lastError() << db.connectionName();
 }
 
 /**

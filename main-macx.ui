@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>406</width>
-    <height>440</height>
+    <width>405</width>
+    <height>551</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -61,7 +61,7 @@
       <x>10</x>
       <y>10</y>
       <width>384</width>
-      <height>421</height>
+      <height>531</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="mainGridLayout">
@@ -83,7 +83,7 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>10</width>
+           <width>18</width>
            <height>20</height>
           </size>
          </property>
@@ -99,7 +99,7 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>350</width>
+           <width>340</width>
            <height>0</height>
           </size>
          </property>
@@ -137,6 +137,8 @@
         <font>
          <family>Helvetica</family>
          <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
@@ -281,26 +283,27 @@
           <bool>true</bool>
          </property>
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>320</width>
+           <width>290</width>
            <height>30</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>320</width>
+           <width>290</width>
            <height>30</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <family>MigMix 1M</family>
+           <family>Helvetica</family>
+           <pointsize>14</pointsize>
           </font>
          </property>
          <property name="mouseTracking">
@@ -334,7 +337,7 @@
           <number>29</number>
          </property>
          <property name="frame">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="cursorPosition">
           <number>29</number>
@@ -412,11 +415,12 @@
        <property name="maximumSize">
         <size>
          <width>400</width>
-         <height>60</height>
+         <height>70</height>
         </size>
        </property>
        <property name="font">
         <font>
+         <family>Helvetica</family>
          <pointsize>11</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -429,7 +433,7 @@
         <enum>QFrame::Plain</enum>
        </property>
        <property name="text">
-        <string>インストールが完了したら、ご契約時にお渡ししたURLへアクセスし、&lt;br&gt;ログインIDとログインパスワードを入力してご利用ください。&lt;br&gt;</string>
+        <string>インストールが完了したら、&lt;br&gt;ご契約時にお渡ししたURLへアクセスし、&lt;br&gt;ログインIDとログインパスワードを入力してご利用ください。&lt;br&gt;</string>
        </property>
        <property name="textFormat">
         <enum>Qt::RichText</enum>

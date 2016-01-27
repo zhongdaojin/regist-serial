@@ -53,6 +53,11 @@ void MainWindow::onReleasePushButtonClicked()
     msgBox.setWindowTitle( tr("シリアル番号の入力"));
 
     DbConnect db;
+    if ( ! db.isConnect ) {
+        msgBox.setText( tr("サーバーに接続できません。<br>インターネット接続をお確かめください。") );
+        msgBox.exec();
+        return;
+    }
     QHash<QString, QString> selectParams, updateParams;
     selectParams.insert(":SERIAL", serial);
     updateParams.insert(":SERIAL", serial);
@@ -79,7 +84,7 @@ void MainWindow::onReleasePushButtonClicked()
          while ( query->next()) {
             QString name = query->value(0).toString();
             QString on_off = query->value(1).toString();
-            qDebug() << name << on_off;
+//            qDebug() << name << on_off;
 
             if ( on_off == STORES_ON ) {
                 msgBox.setStandardButtons(QMessageBox::Ok);
